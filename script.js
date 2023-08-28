@@ -56,3 +56,19 @@ var film = [
         genere: "Musical",
     }
 ];
+
+let ulRegista = document.querySelector("#risultatiRegista")
+
+function ricerca(e){
+    console.log(e.target.value)
+    ulRegista.innerHTML = ""
+    for(let i=0; i<film.length; i++){
+        if(film[i].regista.toLowerCase().includes(e.target.value.toLowerCase())){
+            ulRegista.innerHTML += "<li>" + film[i].regista + "</li>";
+        }
+    }
+    if(e.target.value == 0){
+        ulRegista.innerHTML = "";
+    }
+   
+}

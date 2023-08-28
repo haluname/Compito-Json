@@ -12,7 +12,11 @@ header {
 }
 
 main {
+    margin:0px 30px;
     padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 section {
