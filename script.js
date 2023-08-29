@@ -60,6 +60,7 @@ var film = [
 let oggetto = {}
 let txtAggiungi = document.querySelector("#aggiungiFilm")
 let txtRimuovi = document.querySelector("#rimuoviFilm")
+let txtModifica = document.querySelector("#modificaFilm")
 let listaFilm = document.querySelector(".princ")
 
 setInterval(function(){
@@ -94,6 +95,8 @@ function mandaDati(e){
                 oggetto.genere = array[4].trim();
                 film.push(oggetto);
                 console.log(film)
+                localStorage.setItem('film', JSON.stringify(film));
+
             }
             else{
                 alert("hai inserito un film con id già esistente")
@@ -114,6 +117,8 @@ function eliminaDati(e){
             if(film[i].id.toString() == txtRimuovi.value){
                 if (window.confirm("Vuoi eseguire questa azione?")) {
                     film.splice(i,1) 
+                    localStorage.setItem('film', JSON.stringify(film));
+
                   } else {
                     alert("azione annullata")
                   }
@@ -122,3 +127,28 @@ function eliminaDati(e){
         }
     }
 }
+
+
+function modificaDati(e){
+    if(e.key=="Enter"){
+        for(let i=0; i<film.length; i++){
+            if(film[i].id.toString() == txtModifica.value){
+                film[i].titolo = prompt("Inserisci il nuovo titolo:");
+                film[i].regista = prompt("Inserisci il nuovo regista:");
+                film[i].anno = prompt("Inserisci il nuovo anno:");
+                film[i].genere = prompt("Inserisci il nuovo genere:");
+            }
+        }
+    }
+ 
+
+}
+
+
+
+window.onload = function () { //all onload prendo in filmArchiviati lo storage di "film", se non c'è allora lo ignora, ma se c'è qualcosa nello storage allora riprende la variabile film e ci infila il JSON
+    var filmArchiviati = localStorage.getItem('film');
+    if (filmArchiviati) {
+        film = JSON.parse(filmArchiviati);
+    }
+};  
