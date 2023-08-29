@@ -6,40 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Analisi</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <header>
-        <h1>Data Analisi Libri</h1>
+        <h1>Data Analisi Film</h1>
     </header>
     <main>
+        <section class="princ">
+        </section>
         <section class="titolo">
-            <h2>Ricerca Titolo</h2>
-            <input type="text" id="inputTitolo" placeholder="Cerca...">
-            <ul id="risultatiTitolo"></ul>
+            <h2>Aggiungi Film</h2>
+            <h5>Scrivere Id,Titolo,Regista,Anno,Genere separati da , </h5>
+            <input type="text" id="aggiungiLibro" placeholder="Scrivi..." onkeyup="mandaDati(event)">
         </section>
-        <section class="regista">
-            <h2>Ricerca Regista</h2>
-            <input type="text" id="inputRegista" placeholder="Cerca..." onkeyup="ricerca(event)">
-            <ul id="risultatiRegista"></ul>
+        <section class="titolo">
+            <h2>Elimina Film</h2>
+            <input type="text" id="aggiungiLibro" placeholder="Ricerca... " onkeyup="mandaDati(event)">
         </section>
-        <section class="aggiungi">
-            <h2>Ricerca Anno</h2>
-            <input type="text" id="inputAnno" placeholder="Aggiungi Id...">
-            <input type="text" id="inputAnno" placeholder="Aggiungi Titolo...">
-            <input type="text" id="inputAnno" placeholder="Aggiungi Regista...">
-            <input type="text" id="inputAnno" placeholder="Aggiungi Anno...">
-            <input type="text" id="inputAnno" placeholder="Aggiungi Genere...">
-            <ul id="risultatiAnno"></ul>
+        <section class="titolo">
+            <h2>Modifica Film</h2>
+            <input type="text" id="aggiungiLibro" placeholder="Scrivere Id,Titolo,Regista,Anno,Genere separati da , " onkeyup="mandaDati(event)">
         </section>
-        <section class="genere">
-            <h2>Ricerca Genere</h2>
-            <input type="text" id="inputGenere" placeholder="Cerca...">
-            <ul id="risultatiGenere"></ul>
+        <section class="titolo">
+            <h2>Ricerca Film</h2>
+            <input type="text" id="aggiungiLibro" placeholder="Scrivere Id,Titolo,Regista,Anno,Genere separati da , " onkeyup="mandaDati(event)">
+        </section>
+        <section class="titolo">
+            <h2>Ordina Film</h2>
+            <input type="text" id="aggiungiLibro" placeholder="Scrivere Id,Titolo,Regista,Anno,Genere separati da , " onkeyup="mandaDati(event)">
         </section>
 
     </main>
-    <script src="script.js"></script>
+    
 </body>
 
 </html>

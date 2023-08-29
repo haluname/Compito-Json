@@ -57,18 +57,40 @@ var film = [
     }
 ];
 
-let ulRegista = document.querySelector("#risultatiRegista")
+let oggetto = {}
+let txtAggiungi = document.querySelector("#aggiungiLibro")
+let listaFilm = document.querySelector(".princ")
 
-function ricerca(e){
-    console.log(e.target.value)
-    ulRegista.innerHTML = ""
+setInterval(function(){
+    listaFilm.innerHTML= "";
+    listaFilm.innerHTML+="<h2>Lista Film:</h2>"
     for(let i=0; i<film.length; i++){
-        if(film[i].regista.toLowerCase().includes(e.target.value.toLowerCase())){
-            ulRegista.innerHTML += "<li>" + film[i].regista + "</li>";
+        listaFilm.innerHTML+=`<span>${film[i].id}</span>`
+        listaFilm.innerHTML+=`<span>${film[i].titolo}</span>`
+        listaFilm.innerHTML+=`<span>${film[i].regista}</span>`
+        listaFilm.innerHTML+=`<span>${film[i].anno}</span>`
+        listaFilm.innerHTML+=`<span>${film[i].genere}</span>`
+        listaFilm.innerHTML+=`<br>`
+    }
+},1000)
+
+
+function mandaDati(e){
+
+    if(e.key=="Enter"){
+        let array = txtAggiungi.value.split(',');
+        if(array.length == 5){
+            oggetto.id = parseInt(array[0]);
+            oggetto.titolo = array[1];
+            oggetto.regista = array[2];
+            oggetto.anno = parseInt(array[3]);
+            oggetto.genere = array[4];
+            film.push(oggetto);
+            console.log(film)
         }
+        else{
+            console.log("nada")
+        }
+       
     }
-    if(e.target.value == 0){
-        ulRegista.innerHTML = "";
-    }
-   
 }

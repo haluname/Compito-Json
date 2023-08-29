@@ -12,6 +12,7 @@ header {
 }
 
 main {
+    flex-wrap: wrap;
     margin:0px 30px;
     padding: 20px;
     display: flex;
@@ -19,12 +20,16 @@ main {
     justify-content: space-between;
 }
 
-section {
+.titolo {
+    flex: 1;
+    z-index: 232;
     margin-bottom: 20px;
 }
 
+
+
 input[type="text"] {
-    width: 100%;
+    width: 150px;
     padding: 10px;
     border: 1px solid #ccc;
 }
@@ -37,3 +42,23 @@ ul {
 li {
     margin-bottom: 5px;
 }
+
+
+.princ{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.princ span {
+    padding: 5px; 
+    border: 1px solid #ccc;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    min-width: calc(25% - 10px); 
+    
+  }
+
+  
