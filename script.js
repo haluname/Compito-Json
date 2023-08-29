@@ -58,7 +58,8 @@ var film = [
 ];
 
 let oggetto = {}
-let txtAggiungi = document.querySelector("#aggiungiLibro")
+let txtAggiungi = document.querySelector("#aggiungiFilm")
+let txtRimuovi = document.querySelector("#rimuoviFilm")
 let listaFilm = document.querySelector(".princ")
 
 setInterval(function(){
@@ -76,21 +77,48 @@ setInterval(function(){
 
 
 function mandaDati(e){
+    let error = false;
 
     if(e.key=="Enter"){
         let array = txtAggiungi.value.split(',');
         if(array.length == 5){
-            oggetto.id = parseInt(array[0]);
-            oggetto.titolo = array[1];
-            oggetto.regista = array[2];
-            oggetto.anno = parseInt(array[3]);
-            oggetto.genere = array[4];
-            film.push(oggetto);
-            console.log(film)
+            for(let i=0; i<film.length; i++){
+                if(array[0] == film[i].id.toString())
+                error = true;
+            }
+            if(!error){
+                oggetto.id = parseInt(array[0]);
+                oggetto.titolo = array[1].trim();
+                oggetto.regista = array[2].trim();
+                oggetto.anno = parseInt(array[3]);
+                oggetto.genere = array[4].trim();
+                film.push(oggetto);
+                console.log(film)
+            }
+            else{
+                alert("hai inserito un film con id già esistente")
+            }
+           
         }
         else{
             console.log("nada")
         }
        
+    }
+}
+
+
+function eliminaDati(e){
+    if(e.key=="Enter"){
+        for(let i=0; i<film.length; i++){
+            if(film[i].id.toString() == txtRimuovi.value){
+                if (window.confirm("Vuoi eseguire questa azione?")) {
+                    film.splice(i,1) 
+                  } else {
+                    alert("azione annullata")
+                  }
+                  
+            }
+        }
     }
 }
