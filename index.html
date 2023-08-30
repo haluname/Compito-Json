@@ -33,11 +33,24 @@
         </section>
         <section class="titolo">
             <h2>Ricerca Film</h2>
-            <input type="text" id="" placeholder="Scrivi..." onkeyup="xxxDati(event)">
+            <h5>Se perdi il focus sul textBox la lista si ripristinerà </h5>
+            <input type="text" id="cercaFilm" placeholder="Scrivi..." onkeyup="ricercaDati(event)">
         </section>
         <section class="titolo">
             <h2>Ordina Film</h2>
-            <input type="text" id="" placeholder="Scrivi..." onkeyup="xxxDati(event)">
+            <h5>Ordina per: </h5>
+            <select id="tipoOrdinamento">
+                <option>id</option>
+                <option>titolo</option>
+                <option>regista</option>
+                <option>anno</option>
+                <option>genere</option>
+            </select>
+            <select id="modoOrdinamento">
+                <option>Crescente</option>
+                <option>Decrescente</option>
+            </select>
+            <button type="button" id="btnOrdina" onclick="ordinaArray(event)">Conferma</button>
         </section>
 
     </main>

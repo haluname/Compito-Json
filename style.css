@@ -13,7 +13,7 @@ header {
 
 main {
     flex-wrap: wrap;
-    margin:0px 30px;
+    margin:0px 20px;
     padding: 20px;
     display: flex;
     flex-direction: row;
@@ -59,6 +59,28 @@ li {
     margin-bottom: 10px;
     min-width: calc(25% - 10px); 
     
-  }
+}
+  
+select{
+    background-color: #f0f0f0;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
 
+#btnOrdina{
+    background-color: #ccc;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    font-weight: 700;
+    border: solid 1px black;
+    transition: all 2s;
+}
+
+#btnOrdina:hover{
+    background-color: #a7a7a7;
+    transform: scale(1.1);
+}
   
